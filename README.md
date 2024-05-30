@@ -49,10 +49,15 @@ There are two terminals in the solution:
 #### SmallElectornics_Terminal
 - should receive orders that contain both smartphones and/or tables
 
-
-
 ## How to run it:
-1. Install Docker (if you do not have it)
-2. Start the RabbitMQ brocker
-
-    This is a code block.
+1. Install Docker (if you do not have it): https://www.docker.com/products/docker-desktop/
+2. Start the RabbitMQ broker
+    docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.13-management
+3. Open the solution in Visual Studio and run each project:
+   * TV_Terminal
+   * SmallElectronics_Terminal
+   * WebhookDispatcher
+   * OrderProcessor
+4. Go to http://localhost:5089/swagger/index.html
+5. Try the POST /orders resource (it is already prepolutated with orders data)
+6. Observe in the WebhookDispatcher Console, TV_Terminal Console and SmallElectronics_Terminal Console how the orders "flows" into the system
