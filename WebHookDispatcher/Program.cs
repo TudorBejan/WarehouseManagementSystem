@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Commons.Model;
 using Commons.Model.Product;
@@ -7,13 +7,11 @@ using Commons;
 
 var services = new ServiceCollection();
 
-// Register CartRepository and CartManager for dependency injection
 services.AddScoped<SubscriptionRepository>();
 services.AddScoped<WHCallbackCaller>();
 services.AddScoped<WebHookHandler>();
 services.AddScoped<WebHookEventConsumer>();
 
-// Configure EF Core with SQL Server (or any other provider)
 services.AddDbContext<SubscriptionDbContext>(options =>
     options.UseInMemoryDatabase(MyConstants.SUBSCRIPTION_DB));
 
