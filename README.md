@@ -1,19 +1,20 @@
 # Warehouse Management System
-A WarehouseManagementSystem suggested as a solution to E-conomic technical test that requires the implementation of a Publish-Subscribe system
+This is the suggested solution to E-conomic technical test that requires the implementation of a Publish-Subscribe system.
 
 ![alt text](https://github.com/TudorBejan/WarehouseManagementSystem/blob/main/WarehouseManagementSystem.png)
 
 The proposed solution is a warehouse product and order management system.
-A warehouse receives orders (from an on-line store) and needs to package them and send them to the customer.
-In the warehouse there are multiple workers, each worker being responsible for packaging different products, in different places in the warehouse. 
-Each worker has a Terminal that is "connected" to the warehouse system. With this Terminal the worker is notified each time a new order that he needs to pack is created.
-Each worker needs to receive orders that are assigned to him and it is not interested in other orders from different locations in the warehouse.
+A warehouse receives orders (for example an on-line store) and needs to pack and send them to the customer.
+In the warehouse there are multiple workers, each of them being responsible for packaging different products, in different places of the warehouse. 
+Each worker has a Terminal that is "connected" to the warehouse system. On this Terminal the worker is notified each time a new order is assigned to him.
+Each worker needs to receive orders that are assigned to him and he is not interested in other orders from different locations in the warehouse.
 
 In order to achieve this, the Warehouse System is composed of three components:
 ## 1. Order Processor 
-* it has a REST API (configured with Swagger to make testing easy) that:
+#### that consists of an REST API and business logic for processing the orders
+* the REST API (configured with Swagger to make testing easy):
  	- accepts a list of orders that needs to be processed
- 	- view the list of already processed orders
+ 	- displays the list of already processed orders
 * for each received order, the Order Processor:
 	- searches in the WarehouseDB to find the product location in the warehouse
 	- attaches the product location information to the order
