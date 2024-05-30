@@ -11,7 +11,7 @@ Each worker needs to receive orders that are assigned to him and he is not inter
 
 In order to achieve this, the Warehouse System is composed of three components:
 ## 1. Order Processor 
-#### that consists of an REST API and business logic for processing the orders
+####  It consists of an REST API and business logic for processing the orders.
 * the REST API (configured with Swagger to make testing easy):
  	- accepts a list of orders that needs to be processed
  	- displays the list of already processed orders
@@ -30,10 +30,10 @@ When running the OrderProcessor service, the Warehouse database is pre-populated
 |3|2002       |"B"            |0             |21
 
 ## 2. Webhook Dispatcher
-* it has a consumer that listen to the WebhookEvent queue
-* for each webhook event it receives:
-	- searches in the SubscriptionDB to find the Terminals that are "interested" in receiving that event
-	- pushes the webhook event to the terminals that are subscribed
+* it has a consumer that listens to the WebhookEvent queue
+* for each webhook event that is received:
+	- it searches in the SubscriptionDB to find the Terminals that are "interested" in receiving that event
+	- it pushes the webhook event to the Terminals that are subscribed
 	
 When running the WebHookDispatcher service, the SubscriptionDB is pre-populated with the following data:    
 
