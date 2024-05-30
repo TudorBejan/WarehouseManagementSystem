@@ -59,5 +59,6 @@ There are two terminals in the solution:
    * WebhookDispatcher
    * OrderProcessor
 4. Go to http://localhost:5089/swagger/index.html
-5. Try the POST /orders resource (it is already prepolutated with orders data)
+5. Try the POST /orders resource (it is already prepolutated with orders data) and also can see the response with the process status of each order
 6. Observe in the WebhookDispatcher Console, TV_Terminal Console and SmallElectronics_Terminal Console how the orders "flows" into the system
+7. Try the GET /ordersHistory resource to see the orders in the system
