@@ -52,7 +52,7 @@ There are two terminals in the solution:
 ## How to run it:
 1. Install Docker (if you do not have it): https://www.docker.com/products/docker-desktop/
 2. Start the RabbitMQ broker
-	docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.13-management
+<pre><code>docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.13-management</code></pre>
 3. Open the solution in Visual Studio and run each project:
    * TV_Terminal
    * SmallElectronics_Terminal
