@@ -1,5 +1,5 @@
-# WarehouseManagementSystem
-A WarehouseManagementSystem suggested as a solution to E-conomic technical test that requires the implementation of a publish-subscribe system
+# Warehouse Management System
+A WarehouseManagementSystem suggested as a solution to E-conomic technical test that requires the implementation of a Publish-Subscribe system
 
 ![alt text](https://github.com/TudorBejan/WarehouseManagementSystem/blob/main/WarehouseManagementSystem.png)
 
@@ -10,10 +10,26 @@ Each worker has a Terminal that is "connected" to the warehouse system. With thi
 Each worker needs to receive orders that are assigned to him and it is not interested in other orders from different locations in the warehouse.
 
 In order to achieve this the Warehouse System is composed of three components:
-1.Order Processor 
-2.Webhook Dispacher
-3.Terminals
+1. Order Processor 
+2. Webhook Dispacher
+3. Terminals
 
 There are two databases:
-1.Warehouse database
-2.Subscription database
+1. Warehouse
+2. Subscription
+
+
+
+ When running the WebHookDispatcher service, the Subscription database is pre-poulated with the following data:
+    
+    
+| Id|Topic      |CallbackURL                  
+|---|-----------|-----------------------------
+|1  |TV         |"http://localhost:5030/webhook/order/new"
+|2  |Smartphone |"http://localhost:5031/webhook/order/new"
+|3  |Tablet     |"http://localhost:5031/webhook/order/new"
+
+
+### Code Blocks
+
+    This is a code block.
