@@ -1,0 +1,6 @@
+@TV_Terminal_HostAddress = http://localhost:5030
+
+POST {{TV_Terminal_HostAddress}}/webhook/order/new/
+Accept: application/json
+
+###
