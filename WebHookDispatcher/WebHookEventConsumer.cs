@@ -1,8 +1,9 @@
-﻿using RabbitMQ.Client.Events;
+using RabbitMQ.Client.Events;
 using RabbitMQ.Client;
 using System.Text.Json;
 using System.Text;
 using Commons.Model.Order;
+using Commons;
 
 namespace WebHookDispatcher
 {
@@ -17,23 +18,23 @@ namespace WebHookDispatcher
 
         public void Consume()
         {
-            var factory = new ConnectionFactory { HostName = "localhost" };
+            var factory = new ConnectionFactory { HostName = MyConstants.BROKER_URL };
             using var connection = factory.CreateConnection();
             using var channel = connection.CreateModel();
 
-            channel.QueueDeclare(queue: "WebhookEventsQueue",
+            channel.QueueDeclare(queue: MyConstants.QUEUE_NAME,
                                  durable: false,
                                  exclusive: false,
                                  autoDelete: false,
                                  arguments: null);
 
-            Console.WriteLine(" [*] Waiting for orders.");
+            Console.WriteLine("Waiting for webhook events:");
 
             var consumer = new EventingBasicConsumer(channel);
 
             consumer.Received += ReceiveEvent;
 
-            channel.BasicConsume(queue: "WebhookEventsQueue",
+            channel.BasicConsume(queue: MyConstants.QUEUE_NAME,
                                  autoAck: true,
                                  consumer: consumer);
 
