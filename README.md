@@ -64,5 +64,6 @@ There are two terminals in the solution:
 6. Observe in the WebhookDispatcher Console, TV_Terminal Console and SmallElectronics_Terminal Console how the orders "flows" into the system
 7. Try the GET /ordersHistory resource to see the orders in the system
 
+Unit Tests are located in OrderProcessor.UnitTests project. The tests are written for the most complex method in the project (that constains the business logic of the Order Processor)
 ## Demo:
 https://drive.google.com/file/d/1y9Op8StGeg2CppYTa642lia9J2G_RpdJ/view?usp=sharing
